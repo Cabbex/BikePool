@@ -9,7 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BikePool</title>      
-        <link href="main.css" rel="stylesheet"/>
+        <link href="CSS/main.css" rel="stylesheet" type="text/css"/>
         <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
         <script src="js/typed.js" type="text/javascript"></script>
         <script>
