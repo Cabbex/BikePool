@@ -13,30 +13,28 @@ $client->setClientSecret(CLIENT_SECRET);
 $client->setRedirectUri(redirectUri);
 $client->setScopes("email");
 
-$plus = new Google_Service_Plus($client);
-
 if (isset($_REQUEST["logout"])) {
     session_unset();
 }
 
 if (isset($_GET["code"])) {
-    $client->authenticate($_GET["code"]);
-    $_SESSION["access_token"] = $client->getAccessToken();
-    $redirect = "http://" . $_SERVER["Http_Host"];
-    header("Location:" . filter_var($redirect, FILTER_SANITIZE_URL));
-}
+$token = $client->fetchAccessTokenWithAuthCode($_GET["code"]);
+$client->setAccessToken($token);
 
-if (isset($_SESSION["access_token"]) && $_SESSION["access_token"]) {
-    $client->setAccessToken($_SESSION["access_token"]);
-    $me = $plus->people->get("me");
+$_SESSION["id_token_token"] = $token;
+}   
 
-    $id = $me["id"];
-    $name = $me["displayName"];
+if(!empty($_SESSION["id_token_token"]) && isset($_SESSION["id_token_token"])){
+    $client->setAccessToken($_SESSION["id_token_token"]);
 } else {
     $authUrl = $client->createAuthUrl();
 }
-?>
 
+if($client->getAccessToken()){
+    $token_data = $client->verifyIdToken();
+}
+
+?>
 <html>
     <head>
         <title>Test login</title>
@@ -48,8 +46,8 @@ if (isset($_SESSION["access_token"]) && $_SESSION["access_token"]) {
         echo"<a href='". $authUrl ."'>Login</a>";
         echo"</div>";
         }else{
-            print "ID: {$id} <br>";
-            print "Name {$name} <br>";
+            echo "<p>ID_Token: </p>";
+            print var_export($token_data);
         }
         ?>
     </body>
