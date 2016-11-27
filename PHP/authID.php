@@ -10,8 +10,12 @@ $client->setAuthConfig($config);
 if ($_GET["token"]) {
     $result = $client->verifyIdToken($_GET["token"]);
     if($result){
-        $data = $result->getAttributes();
-        print var_export($data);
+        print var_export($result);
+        echo "<br/>";
+        print $result["name"]; 
+        print $result["family_name"];
+        print $result["email"];
+        print $result["sub"];
     }
     
 }
