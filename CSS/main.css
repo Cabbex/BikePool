@@ -11,10 +11,33 @@ body{
     background-color: #F1F1F1;
 }
 
+h4{
+    letter-spacing: 0.02em;
+}
+
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.section-about {
+    min-height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: #F1F1F1;
+
+}
+.section-about .media-object {
+    width: 2.2em;
+    height: 2.2em; }
+
+.btn{
+    width: 42vh;
+    height: 5vh;
 }
 
 a{
@@ -31,14 +54,15 @@ p{
 }
 
 .start{
-    height: 800px;
+    height: 100vh;
     background-color:#BE524F;
 }
 
 .wrap{
     max-width: 550px;
     margin: auto;
-    background-color:#BE524F;   
+    background-color:#BE524F; 
+    padding-top: 150px;
 }
 
 .type-wrap{
@@ -48,6 +72,8 @@ p{
     border-radius:1px;
     border:#CCC 1px solid;
     text-align: center;
+    font-size: 20px;
+    letter-spacing: 0.02em;
 }
 
 h1{

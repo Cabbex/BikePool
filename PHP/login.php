@@ -18,22 +18,21 @@ if (isset($_REQUEST["logout"])) {
 }
 
 if (isset($_GET["code"])) {
-$token = $client->fetchAccessTokenWithAuthCode($_GET["code"]);
-$client->setAccessToken($token);
+    $token = $client->fetchAccessTokenWithAuthCode($_GET["code"]);
+    $client->setAccessToken($token);
 
-$_SESSION["id_token_token"] = $token;
-}   
+    $_SESSION["id_token_token"] = $token;
+}
 
-if(!empty($_SESSION["id_token_token"]) && isset($_SESSION["id_token_token"])){
+if (!empty($_SESSION["id_token_token"]) && isset($_SESSION["id_token_token"])) {
     $client->setAccessToken($_SESSION["id_token_token"]);
 } else {
     $authUrl = $client->createAuthUrl();
 }
 
-if($client->getAccessToken()){
+if ($client->getAccessToken()) {
     $token_data = $client->verifyIdToken();
 }
-
 ?>
 <html>
     <head>
@@ -41,13 +40,16 @@ if($client->getAccessToken()){
     </head>
     <body>
         <?php
-        if(isset($authUrl)){
-        echo "<div>";
-        echo"<a href='". $authUrl ."'>Login</a>";
-        echo"</div>";
-        }else{
+        if (isset($authUrl)) {
+            echo "<div>";
+            echo"<a href='" . $authUrl . "'>Login</a>";
+            echo"</div>";
+        } else {
             echo "<p>ID_Token: </p>";
             print var_export($token_data);
+            print $token_data[1][0];
+            echo "<br/>";
+            echo "<a href='?logout'>Logga ut</a>";
         }
         ?>
     </body>
