@@ -12,9 +12,12 @@ if ($_GET["token"]) {
     if($result){
         print var_export($result);
         echo "<br/>";
-        print $result["name"]; 
+        print $result["name"];
+        echo "<br/>";
         print $result["family_name"];
+        echo "<br/>";
         print $result["email"];
+        echo "<br/>";
         print $result["sub"];
     }
     

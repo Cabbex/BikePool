@@ -1,5 +1,0 @@
-Här lägger vi våra PHP-filer.
-
-Denna fil skapades så att vi kan få till mappar i github. 
-
-Ta bort denna fil när ni är klara eller lägger till något i mappen.
