@@ -6,41 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="bower_components/bootstrap/less/jumbotron.less" type="text/css">
-
-        <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;   
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 60px;
-        background-image: url(img/white_background2.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-      }
-      #special{
-                padding-top: 60px;
-                padding-left: 200px;
-            }
-            #map{
-                border: solid red;
-            }
-            well{
-                border: solid red;
-            }
-            
-    </style>
+        <link href="CSS/googleMap.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
         <header>
             <div>
-                <nav class="navbar navbar-default navbar-fixed-top" style="background-color: red;">
+                <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #C72532;">
                     <div class="navbar-header">
-                          <a class="navbar-brand" href="#"><img src="img/Logomakr_2LsFud.png" style=""/></a>
+                          <a class="navbar-brand" href="#"><img src="img/Logo.png" style=""/></a>
                       </div>
                     <div class="container" id="special">
                       
@@ -104,7 +78,7 @@
         <div class="col-sm-offset-1 col-sm-10" id="map"></div>
         
         <script src="js/modernizr-custom.js" type="text/javascript"></script>
-        <script src="js/script.js" type="text/javascript"></script>
+        <script src="js/googleMapScript.js" type="text/javascript"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCe6YvYhgU76_ke2Z64dwv1sHTpj6OibHE&callback=initMap"
     async defer></script>
     </body>
