@@ -124,6 +124,37 @@ and open the template in the editor.
             </section>
 
         </div>
+        
+        <div class="section-staff">
+                <div class="row">
+                    <h1>The staff</h1>
+                    <div class="col-md-2 col-sm-6 col-md-offset-1">
+                        <img class="img-circle" src="img/user.png">
+                        <h3 class="name">Casper Björk</h3>
+                        <h4 class="task">Project Leader</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-6 ">
+                        <img class="img-circle" src="img/user.png">
+                        <h3 class="name">Gustav Andersson</h3>
+                        <h4 class="task">Front End</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-6">
+                        <img class="img-circle" src="img/user.png">
+                        <h3 class="name">Manjodh Singh</h3>
+                        <h4 class="task">Back End</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-6">
+                        <img class="img-circle" src="img/user.png">
+                        <h3 class="name">Jones Amor Trabelsi</h3>
+                        <h4 class="task">Front End</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-6">
+                        <img class="img-circle" src="img/user.png">
+                        <h3 class="name">Albin Arvidsson</h3>
+                        <h4 class="task">Front/Back End</h4>
+                    </div>
+                </div>
+        </div>
 
     </body>
 </html>
