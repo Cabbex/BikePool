@@ -9,6 +9,7 @@ body{
     font-family: "Open Sans", sans-serif;
     font-size: 100%; 
     background-color: #F1F1F1;
+    overflow-x: hidden;
 }
 
 h4{
@@ -34,6 +35,20 @@ img {
 .section-about .media-object {
     width: 2.2em;
     height: 2.2em; }
+
+.section-staff{
+    background-color: #212127;
+    color: white;
+}
+
+.task{
+    text-align:center;
+    font-style: italic;
+}
+
+.name{
+    text-align: center;
+}
 
 .btn{
     width: 42vh;

@@ -68,7 +68,6 @@ and open the template in the editor.
                     </div>
                     <span id="typed" style="white-space:pre;"></span>
                 </div>
-                <button type="button" class="btn btn-primary">Facebook</button>
                 <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
             </div>
         </div>
@@ -145,7 +144,7 @@ and open the template in the editor.
                     </div>
                     <div class="col-md-2 col-sm-6">
                         <img class="img-circle" src="img/user.png">
-                        <h3 class="name">Jones Amor Trabelsi</h3>
+                        <h3 class="name">Jones Trabelsi</h3>
                         <h4 class="task">Front End</h4>
                     </div>
                     <div class="col-md-2 col-sm-6">
