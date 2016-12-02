@@ -21,7 +21,8 @@ if ($_GET["token"]) {
             } catch (PDOException $exc) {
                 echo "CheckUser(True) Error, Meddelande: " . $exc;
             }
-            header("Location: http://localhost/BikePool/min_sida.php?id=".$result["sub"]);
+            //Byta innan man skickar upp till servern
+            header("Location: http://localhost/BikePool/getBasicUserProfile.php?id=".$result["sub"]);
         } else {
             //Användaren finns inte.
             echo "Användare finns inte";
