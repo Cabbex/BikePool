@@ -29,7 +29,8 @@ img {
     align-items: center;
     padding-top: 2em;
     padding-bottom: 2em;
-    background-color: #F1F1F1;
+    background-color:#BE524F; 
+    color: white;
 
 }
 .section-about .media-object {
@@ -41,6 +42,22 @@ img {
     color: white;
 }
 
+.btn
+{
+    padding: 10px 20px;
+    background-color: #333;
+    color: #ffffff;
+    border-radius: 0;
+    transition: .2s;
+}
+
+.btn:hover, .btn:focus
+{
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+}
+
 .task{
     text-align:center;
     font-style: italic;
@@ -48,11 +65,6 @@ img {
 
 .name{
     text-align: center;
-}
-
-.btn{
-    width: 42vh;
-    height: 5vh;
 }
 
 a{
@@ -69,14 +81,13 @@ p{
 }
 
 .start{
+    background-image: url("../img/street.jpg");
     height: 100vh;
-    background-color:#BE524F;
 }
 
 .wrap{
     max-width: 550px;
     margin: auto;
-    background-color:#BE524F; 
     padding-top: 150px;
 }
 
