@@ -1,10 +1,10 @@
 <?php
 
 function getConnection(){
-$servername = "casper-192206.mysql.binero.se";
-$username = "192206_ow69026";
-$password = "_ow69026";
-$dbname = "192206-casper";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bikepool";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
