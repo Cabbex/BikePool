@@ -68,13 +68,26 @@ and open the template in the editor.
                     </div>
                     <span id="typed" style="white-space:pre;"></span>
                 </div>
-                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn page-scroll" href="#staff">Read more about us</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="" class="btn btn-primary">Facebook</a>
+                    </div>
+                </div>
             </div>
-            <a class="btn page-scroll" href="#staff">Read more about us</a>
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="#staff" class="arrow page-scroll"><img src="img/arrow.png" alt="Arrow"/></a>
+                </div>
+            </div>
         </div>
 
         <div class="section-about">
-
             <section class="container">
                 <div class="row section">
 
@@ -129,27 +142,27 @@ and open the template in the editor.
             <div class="row">
                 <h1>The staff</h1>
                 <div class="col-md-2 col-sm-6 col-md-offset-1">
-                    <img class="img-circle" src="img/user.png">
+                    <img class="img-circle" src="img/rsz_user2.png">
                     <h3 class="name">Casper Björk</h3>
                     <h4 class="task">Project Leader</h4>
                 </div>
                 <div class="col-md-2 col-sm-6 ">
-                    <img class="img-circle" src="img/user.png">
+                    <img class="img-circle" src="img/rsz_user2.png">
                     <h3 class="name">Gustav Andersson</h3>
                     <h4 class="task">Front End</h4>
                 </div>
                 <div class="col-md-2 col-sm-6">
-                    <img class="img-circle" src="img/user.png">
+                    <img class="img-circle" src="img/rsz_user2.png">
                     <h3 class="name">Manjodh Singh</h3>
                     <h4 class="task">Back End</h4>
                 </div>
                 <div class="col-md-2 col-sm-6">
-                    <img class="img-circle" src="img/user.png">
+                    <img class="img-circle" src="img/rsz_user2.png">
                     <h3 class="name">Jones Trabelsi</h3>
                     <h4 class="task">Front End</h4>
                 </div>
                 <div class="col-md-2 col-sm-6">
-                    <img class="img-circle" src="img/user.png">
+                    <img class="img-circle" src="img/rsz_user2.png">
                     <h3 class="name">Albin Arvidsson</h3>
                     <h4 class="task">Front/Back End</h4>
                 </div>

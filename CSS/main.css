@@ -7,9 +7,10 @@
 
 body{
     font-family: "Open Sans", sans-serif;
-    font-size: 100%; 
+    font-size: 15px; 
     background-color: #F1F1F1;
     overflow-x: hidden;
+    
 }
 
 h4{
@@ -20,6 +21,8 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .section-about {
@@ -40,15 +43,21 @@ img {
 .section-staff{
     background-color: #212127;
     color: white;
+    border-top: 1px solid black;
+}
+
+.arrow{
+    padding-top: 200px;
 }
 
 .btn
 {
-    padding: 10px 20px;
+
     background-color: #333;
     color: #ffffff;
     border-radius: 0;
     transition: .2s;
+    height: 37px;
 }
 
 .btn:hover, .btn:focus
@@ -61,10 +70,13 @@ img {
 .task{
     text-align:center;
     font-style: italic;
+    color: #ABABAB;
+    font-weight:300;
 }
 
 .name{
     text-align: center;
+
 }
 
 a{
