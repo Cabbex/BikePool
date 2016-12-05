@@ -179,16 +179,22 @@ and open the template in the editor.
             <footer class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <h4 class="footer-header">About Bikepool</h4>
-                        <p>Bikepool was born in 2016 as five hungry students put their brains together. The project is a cooperation between the two schools <i>Teknikum</i> and <i>Tumba</i>.</p>
+                        <div class="footer-body slideanim">
+                            <h4 class="footer-header">About Bikepool</h4>
+                            <p>Bikepool was born in 2016 as five hungry students put their brains together. The project is a cooperation between the two schools <i>Teknikum</i> and <i>Tumba</i>.</p>
+                        </div>
                     </div>
                     <div class="col-md-4">
-                        <h4 class="footer-header">Our locations</h4>
-                        <p>Gamla Norrvägen 6, 352 43 <i>Växjö</i><br/>Utbildningsvägen 2, 147 40 <i>Tumba</i><br/>Sweden</p>
+                        <div class="footer-body slideanim">
+                            <h4 class="footer-header">Our locations</h4>
+                            <p>Gamla Norrvägen 6, 352 43 <i>Växjö</i><br/>Utbildningsvägen 2, 147 40 <i>Tumba</i><br/>Sweden</p>
+                        </div>
                     </div>
                     <div class="col-md-4">
-                        <h4 class="footer-header">Contact us</h4>
-                        <p>If you have an opinion of what could be improved at Bikepool, feel free to send an email to the address below<br/>bikepool@gmail.com</p>
+                        <div class="footer-body slideanim">
+                            <h4 class="footer-header">Contact us</h4>
+                            <p>If you have an opinion of what could be improved at Bikepool, feel free to send an email to the address below<br/>bikepool@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </footer>
