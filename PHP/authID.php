@@ -69,12 +69,17 @@ function checkUser($sub) {
         return false;
     }
 }
-
+/**
+ * <h1>Insert Kontakt </h1>
+ * <p>Will handle the creations of new users. Inserts the users Email only.</p>
+ * @param type $result
+ * @param type $id
+ */
 function insertKontakt($result, $id) {
     try {
         $connection = getConnection();
-        $sql = "INSERT INTO kontaktlista(Email, Nummer, Kontakt_ID) VALUES (" . $result["email"] . ",0," . $id . ")";
-        $stmt = $connection->prepare($sql);
+        $sql = "INSERT INTO kontaktlista(Email, Nummer, Kontakt_ID) VALUES (\"" . $result["email"] . "\",0," . $id . ")";
+        $stmt = $connection->prepare(stripslashes($sql));
         $stmt->execute();
     } catch (PDOException $exc) {
         echo "InsertKontakt fel - " . $exc;
@@ -83,7 +88,11 @@ function insertKontakt($result, $id) {
     $stmt = null;
     $connection = null;
 }
-
+/**
+ * <h1>Insert Position </h1>
+ * <p>Will handle the creations of new users. Inserts nothing of importens. Is only to hold up a spot. </p>
+ * @param type $id
+ */
 function insertPosition($id) {
     try {
         $connection = getConnection();
@@ -97,7 +106,11 @@ function insertPosition($id) {
     $stmt = null;
     $connection = null;
 }
-
+/**
+ * <h1>Gets the next id in database </h1>
+ * <p>Will return the next aveilble ID from the database. </p>
+ * @return type
+ */
 function getNextID() {
     try {
         $connection = getConnection();
@@ -114,16 +127,20 @@ function getNextID() {
     $PosStmt = null;
     return $id;
 }
-
+/**
+ * <h1>Creates the user</h1>
+ * <p>Will  </p>
+ * @param type $id
+ * @param type $result
+ */
 function createUser($id, $result){
     try {
         $connection = getConnection();
         $sql = "INSERT INTO anvandare(ID, Namn, Tillganglighet, G_F, Tagtid, KL_ID, POS_ID, Login_ID)
-            VALUES (" . $id . "," . $result["name"] . ",0,1,null," . $id . "," . $id . "," . $result["sub"] . ")";
-        $stmt = $connection->prepare($sql);
+            VALUES (" . $id . ",\"" . $result["name"] . "\",0,1,0," . $id . "," . $id . ",\"" . $result["sub"] . "\")";
+        $stmt = $connection->prepare(stripslashes($sql));
         $stmt->execute();
     } catch (PDOException $exc) {
         echo "createUser fel - ".$exc;
     }
-
 }
