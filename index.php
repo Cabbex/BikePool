@@ -58,7 +58,7 @@ and open the template in the editor.
         <div class="start">
 
             <div class="wrap">
-                <a href="index.php"><img class="img-responsive" src="img/Logo.png" alt="BikePool"/></a><br/>
+                <a href="index.php"><img src="img/Logo.png" alt="BikePool"/></a><br/>
                 <div class="type-wrap">
                     <div id="typed-strings">
                         <span>Would you like to facilitate your life as a <strong>traveler?</strong></span>
@@ -68,13 +68,22 @@ and open the template in the editor.
                     </div>
                     <span id="typed" style="white-space:pre;"></span>
                 </div>
-                <button type="button" class="btn btn-primary">Facebook</button>
-                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+            </div>
+
+            <div class="login">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="well">
+                                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="section-about">
-
             <section class="container">
                 <div class="row section">
 
@@ -82,10 +91,10 @@ and open the template in the editor.
                         <div class="media">
                             <div class="media-left">
                                 <a>
-                                    <img class="media-object" src="img/location.png" alt="Location"/>
+                                    <img class="media-object slideanim" src="img/location.png" alt="Location"/>
                                 </a>
                             </div>
-                            <div class="media-body">
+                            <div class="media-body slideanim">
                                 <h4 class="media-heading">Share eachothers bicycles</h4>
                                 Specify your destination to find another partner to share your bicycle with. Your life couldn't be more perfect.
                             </div>
@@ -96,10 +105,10 @@ and open the template in the editor.
                         <div class="media">
                             <div class="media-left">
                                 <a>
-                                    <img class="media-object" src="img/staff.png" alt="Staff"/>
+                                    <img class="media-object slideanim" src="img/staff.png" alt="Staff"/>
                                 </a>
                             </div>
-                            <div class="media-body">
+                            <div class="media-body slideanim">
                                 <h4 class="media-heading">We are developers</h4>
                                 Our goal was to create something helpful for travelers between citys. Five passionated developers created Bikepool.
                             </div>
@@ -110,10 +119,10 @@ and open the template in the editor.
                         <div class="media">
                             <div class="media-left">
                                 <a>
-                                    <img class="media-object" src="img/lock.png" alt="Login"/>
+                                    <img class="media-object slideanim" src="img/lock.png" alt="Login"/>
                                 </a>
                             </div>
-                            <div class="media-body">
+                            <div class="media-body slideanim">
                                 <h4 class="media-heading">Login to find your partner</h4>
                                 You're one step from revolution. Login to take part of this. Don't hesitate, you won't regret it. 
                             </div>
@@ -125,5 +134,84 @@ and open the template in the editor.
 
         </div>
 
+        <div class="section-staff" id="staff">
+            <div class="row">
+                <h1 class="slideanim">The staff</h1>
+                <div class="col-md-2 col-sm-6 col-md-offset-1">
+                    <div class="staff-body slideanim">
+                        <img class="img-circle" src="img/rsz_user2.png">
+                        <h3 class="name">Casper Björk</h3>
+                        <h4 class="task">Project Leader</h4>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6 ">
+                    <div class="staff-body slideanim">
+                        <img class="img-circle" src="img/rsz_user2.png">
+                        <h3 class="name">Gustav Andersson</h3>
+                        <h4 class="task">Front End</h4>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="staff-body slideanim">
+                        <img class="img-circle" src="img/rsz_user2.png">
+                        <h3 class="name">Manjodh Singh</h3>
+                        <h4 class="task">Back End</h4>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="staff-body slideanim">
+                        <img class="img-circle" src="img/rsz_user2.png">
+                        <h3 class="name">Jones Trabelsi</h3>
+                        <h4 class="task">Front End</h4>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="staff-body slideanim">
+                        <img class="img-circle" src="img/rsz_user2.png">
+                        <h3 class="name">Albin Arvidsson</h3>
+                        <h4 class="task">Front/Back End</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            <footer class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="footer-body slideanim">
+                            <h4 class="footer-header">About Bikepool</h4>
+                            <p>Bikepool was born in 2016 as five hungry students put their brains together. The project is a cooperation between the two schools <i>Teknikum</i> and <i>Tumba</i>.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-body slideanim">
+                            <h4 class="footer-header">Our locations</h4>
+                            <p>Gamla Norrvägen 6, 352 43 <i>Växjö</i><br/>Utbildningsvägen 2, 147 40 <i>Tumba</i><br/>Sweden</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="footer-body slideanim">
+                            <h4 class="footer-header">Contact us</h4>
+                            <p>If you have an opinion of what could be improved at Bikepool, feel free to send an email to the address below<br/>bikepool@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script>
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 800) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        </script>
+        <script src="JS/scrolling-nav.js" type="text/javascript"></script>
+        <script src="JS/jquery.easing.min.js" type="text/javascript"></script>
     </body>
 </html>
