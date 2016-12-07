@@ -13,28 +13,26 @@ $client->setAuthConfig($config);
 
 if ($_GET["token"]) {
     $result = $client->verifyIdToken($_GET["token"]);
+    print var_export($result);
     if ($result) {
         if (checkUser($result["sub"])) {
             //Användaren finns.
-            try {
-                $connection = getConnection();
-                $sql = "SELECT * FROM Anvandare WHERE Login_id =" . $result["sub"];
-                $stmt = $connection->prepare($sql);
-                $stmt->execute();
-                $resultSet = $stmt->fetch();
-            } catch (PDOException $exc) {
-                echo "CheckUser(True) Error, Meddelande: " . $exc;
-            }
-            //Byta innan man skickar upp till webbservern
-            header("Location: http://localhost/BikePool/getBasicUserProfile.php?id=" . $result["sub"]);
+            echo "Användaren finns";
+            header("Location: http://casper.te4.nu/BikePool/min_sida.php?id=" . $result["sub"]);
         } else {
             //Användaren finns inte.
             $id = getNextID();
             insertKontakt($result, $id);
             insertPosition($id);
             createUser($id, $result);
+            echo "Användaren finns";
+            header("Location: http://casper.te4.nu/BikePool/min_sida.php?id=" . $result["sub"]);
         }
+    } else {
+        echo "fail verifyToken";
     }
+} else {
+    echo "Fail get token";
 }
 
 /**
@@ -49,7 +47,7 @@ function checkUser($sub) {
 
     try {
         $connection = getConnection();
-        $sql = "SELECT Login_id FROM Anvandare WHERE Login_id =" . $sub;
+        $sql = "SELECT Login_id FROM anvandare WHERE Login_id =" . $sub;
         $stmt = $connection->prepare($sql);
         $stmt->execute();
         $resultSet = $stmt->fetch();
