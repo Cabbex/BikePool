@@ -44,3 +44,13 @@ li{
 .icons{
     margin-top: 70px;
 }
+
+.content{
+    border-left: 1px solid #c7c7c7;
+    border-right: 1px solid #c7c7c7;
+    background: white;
+}
+
+.search{
+    float:right;
+}
