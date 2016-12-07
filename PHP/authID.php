@@ -17,7 +17,7 @@ if ($_GET["token"]) {
         if (checkUser($result["sub"])) {
             //Användaren finns.
             $_SESSION["loggedIn"] = true;
-            header("Location: http://localhost/BikePool/min_sida.php?id=" . $result["sub"]);
+            header("Location: http://casper.te4.nu/BikePool/min_sida.php?id=" . $result["sub"]);
         } else {
             //Användaren finns inte.
             $id = getNextID();
@@ -25,7 +25,7 @@ if ($_GET["token"]) {
             insertPosition($id);
             createUser($id, $result);
             $_SESSION["loggedIn"] = true;
-            header("Location: http://localhost/BikePool/min_sida.php?id=" . $result["sub"]);
+            header("Location: http://casper.te4.nu/BikePool/min_sida.php?id=" . $result["sub"]);
         }
     } else {
         echo "fail verifyToken";

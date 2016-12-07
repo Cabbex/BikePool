@@ -2,7 +2,7 @@
     require __DIR__ . '/PHP/getBasicUserProfile.php';
     session_start();
     if($_SESSION["loggedIn"] != true){
-        header("Location: http://localhost/BikePool/index.php");
+        header("Location: http://casper.te4.nu/BikePool/index.php");
     }
 ?>
 <html>
