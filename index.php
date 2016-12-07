@@ -14,7 +14,7 @@ and open the template in the editor.
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-        <script src="js/typed.js" type="text/javascript"></script>
+        <script src="JS/typed.js" type="text/javascript"></script>
         <script src="JS/googleSignIn.js" type="text/javascript"></script>
         <script>
             $(function () {
