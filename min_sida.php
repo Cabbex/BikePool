@@ -1,9 +1,13 @@
 <?php 
     require __DIR__ . '/PHP/getBasicUserProfile.php';
+    session_start();
+    if($_SESSION["loggedIn"] != true){
+        header("Location: http://localhost/BikePool/index.php");
+    }
 ?>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Min sida</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -52,7 +56,7 @@
                         <ul class="dropdown-menu" style="background: #BE524F;">
                             <li><a href="#" class="text-white text-white-hover">Help</a></li>
                             <li><a href="#" class="text-white text-white-hover">Options</a></li>
-                            <li><a href="#" class="text-white text-white-hover">Log out</a></li>
+                            <li><a href="PHP/logout.php" class="text-white text-white-hover">Log out</a></li>
                         </ul>
                       </li>
                     </ul>
