@@ -6,18 +6,17 @@
  */
 require_once __DIR__ . "/google-api-php-client-2.1.0/vendor/autoload.php";
 require 'connection.php';
-
+session_start();
 $config = __DIR__ . "/outh-credentials.json";
 $client = new Google_Client;
 $client->setAuthConfig($config);
-
 if ($_GET["token"]) {
     $result = $client->verifyIdToken($_GET["token"]);
     print var_export($result);
     if ($result) {
         if (checkUser($result["sub"])) {
             //Användaren finns.
-            echo "Användaren finns";
+            $_SESSION["loggedIn"] = true;
             header("Location: http://casper.te4.nu/BikePool/min_sida.php?id=" . $result["sub"]);
         } else {
             //Användaren finns inte.
@@ -25,7 +24,7 @@ if ($_GET["token"]) {
             insertKontakt($result, $id);
             insertPosition($id);
             createUser($id, $result);
-            echo "Användaren finns";
+            $_SESSION["loggedIn"] = true;
             header("Location: http://casper.te4.nu/BikePool/min_sida.php?id=" . $result["sub"]);
         }
     } else {
@@ -127,7 +126,7 @@ function getNextID() {
 }
 /**
  * <h1>Creates the user</h1>
- * <p>Will  </p>
+ * <p>Will create most of the user but nothing different from the other instert methods. </p>
  * @param type $id
  * @param type $result
  */
