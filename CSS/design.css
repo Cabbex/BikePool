@@ -1,0 +1,46 @@
+
+.icon-bar{
+    background-color: #BE524F;
+}
+.text-white{
+    color: white !important;
+}
+.text-white-hover{
+    color: white !important;
+}
+.active{
+    color: black !important;
+    background-color: white !important;
+}
+.test{
+    margin-bottom:  50px;
+}
+
+.ul-nav{
+    margin-top: 50px;
+}
+li{
+    display:  block;
+}
+.text-white-hover:hover{
+    color: black !important;
+    background-color: white !important;
+}
+
+/*Allt nedan är funktioner ämnat för sidans "footer" :) */
+.footer{
+    bottom: 0px;
+    background-color: #BE524F;
+    width: 100%;
+}
+
+
+.glyph_footer{
+
+    margin-top: 20px;
+    font-size: 2em;
+    color: white;
+}
+.icons{
+    margin-top: 70px;
+}
