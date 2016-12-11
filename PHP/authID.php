@@ -17,6 +17,7 @@ if ($_GET["token"]) {
         if (checkUser($result["sub"])) {
             //Användaren finns.
             $_SESSION["loggedIn"] = true;
+            $_SESSION["sub"] = $result["sub"];
             header("Location: http://localhost/BikePool/min_sida.php?id=" . $result["sub"]);
         } else {
             //Användaren finns inte.
@@ -25,6 +26,7 @@ if ($_GET["token"]) {
             insertPosition($id);
             createUser($id, $result);
             $_SESSION["loggedIn"] = true;
+            $_SESSION["sub"] = $result["sub"];
             header("Location: http://casper.te4.nu/BikePool/min_sida.php?id=" . $result["sub"]);
         }
     } else {
@@ -66,6 +68,7 @@ function checkUser($sub) {
         return false;
     }
 }
+
 /**
  * <h1>Insert Kontakt </h1>
  * <p>Will handle the creations of new users. Inserts the users Email only.</p>
@@ -85,6 +88,7 @@ function insertKontakt($result, $id) {
     $stmt = null;
     $connection = null;
 }
+
 /**
  * <h1>Insert Position </h1>
  * <p>Will handle the creations of new users. Inserts nothing of importens. Is only to hold up a spot. </p>
@@ -103,6 +107,7 @@ function insertPosition($id) {
     $stmt = null;
     $connection = null;
 }
+
 /**
  * <h1>Gets the next id in database </h1>
  * <p>Will return the next aveilble ID from the database. </p>
@@ -116,7 +121,7 @@ function getNextID() {
         $PosStmt->execute();
         $totalUsers = $PosStmt->fetchAll();
     } catch (PDOException $exc) {
-        echo "getNextID fel - ".$exc;
+        echo "getNextID fel - " . $exc;
         echo "<br/>";
     }
 
@@ -124,13 +129,14 @@ function getNextID() {
     $PosStmt = null;
     return $id;
 }
+
 /**
  * <h1>Creates the user</h1>
  * <p>Will create most of the user but nothing different from the other instert methods. </p>
  * @param type $id
  * @param type $result
  */
-function createUser($id, $result){
+function createUser($id, $result) {
     try {
         $connection = getConnection();
         $sql = "INSERT INTO anvandare(ID, Namn, Tillganglighet, G_F, Tagtid, KL_ID, POS_ID, Login_ID)
@@ -138,6 +144,6 @@ function createUser($id, $result){
         $stmt = $connection->prepare(stripslashes($sql));
         $stmt->execute();
     } catch (PDOException $exc) {
-        echo "createUser fel - ".$exc;
+        echo "createUser fel - " . $exc;
     }
 }

@@ -4,6 +4,11 @@ function initMap() {
         navigator.geolocation.getCurrentPosition(loadMap);
     }
 }
+function initMap2nd() {
+    if (Modernizr.geolocation) {
+        navigator.geolocation.getCurrentPosition(loadMap2);
+    }
+}
 
 
 function loadMap(position) {
@@ -19,4 +24,11 @@ function loadMap(position) {
         position: {lat: latitude, lng: longitude},
         map: map
     });
+}
+
+function loadMap2(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    console.log(latitude + ":" + longitude);
+    window.open("http://localhost/BikePool/PHP/insertMapData.php?cord="+latitude+":"+longitude,"_self");
 }

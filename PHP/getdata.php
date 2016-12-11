@@ -10,7 +10,7 @@ try {
     $resultSet = $stmt->fetchAll();
     $data = json_encode($resultSet);
     $error = json_last_error_msg();
-    echo $data;
+    print_r($data);
 } catch (PDOException $e) {
     echo "GetData Error, meddelande = " . $e;
     echo "<br/>";
