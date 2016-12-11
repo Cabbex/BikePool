@@ -20,5 +20,3 @@ function loadMap(position) {
         map: map
     });
 }
-
-    
