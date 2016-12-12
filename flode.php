@@ -4,7 +4,6 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
     <head>
         <meta charset="UTF-8">
         <title>Flöde</title>
@@ -13,6 +12,8 @@ and open the template in the editor.
         <link rel="stylesheet" href="bower_components/bootstrap/less/jumbotron.less" type="text/css">
         <link href="CSS/design.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+        <script src="JS/flode.js" type="text/javascript"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
             #map {
@@ -26,7 +27,6 @@ and open the template in the editor.
                 background-size: cover;
             </style>
         </head>
-        <body>
             <header>
                 <nav class="navbar  navbar-fixed-top" style="background-color: #BE524F;">
                     <div class="container">
@@ -76,38 +76,6 @@ and open the template in the editor.
                                 </form>
                             </div>
                             <table class="table table-striped">
-                                <tr>
-                                    <td><img src="img/rsz_user2.png"</td>
-                                    <td>Name</td>
-                                    <td>Rutt</td>
-                                    <td><button class="btn btn-primary">Profile</button></td>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/rsz_user2.png"</td>
-                                    <td>Name</td>
-                                    <td>Rutt</td>
-                                    <td>See profile</td>
-                                </tr>
-                                <tr>
-                                    <td><img src="img/rsz_user2.png"</td>
-                                    <td>Name</td>
-                                    <td>Rutt</td>
-                                    <td>See profile</td>
-                                </tr><tr>
-                                    <td><img src="img/rsz_user2.png"</td>
-                                    <td>Name</td>
-                                    <td>Rutt</td>
-                                    <td>See profile</td>
-                                </tr><tr>
-                                    <td><img src="img/rsz_user2.png"</td>
-                                    <td>Name</td>
-                                    <td>Rutt</td>
-                                    <td>See profile</td>
-                                </tr><tr>
-                                    <td><img src="img/rsz_user2.png"</td>
-                                    <td>Name</td>
-                                    <td>Rutt</td>
-                                    <td>See profile</td>
                                 </tr>
                             </table>
                         </div>
