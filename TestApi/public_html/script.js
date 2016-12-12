@@ -162,7 +162,7 @@ function Search() {
             "</AND>" +
             "</FILTER>" +
             // Just include wanted fields to reduce response size.
-            "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
+            //"<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
             "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
             "</QUERY>" +
             "</REQUEST>";
@@ -178,8 +178,6 @@ function Search() {
                 jQuery("#timeTableDeparture tr:last").
                         after("<tr><td colspan='4'>Inga avgångar hittades</td></tr>");
             try {
-                renderTrainAnnouncement(response.RESPONSE.RESULT[0].TrainAnnouncement);
-
                 for (var i = 0; i < response.RESPONSE.RESULT[0].TrainAnnouncement.length; i++) {
                     tagid_s.push(response.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent);
                 }
@@ -199,23 +197,6 @@ function Search() {
     });
 }
 
-function renderTrainAnnouncement(announcement) {
-    $(announcement).each(function (iterator, item) {
-        var advertisedtime = new Date(item.AdvertisedTimeAtLocation);
-        var hours = advertisedtime.getHours() - 1;
-        var minutes = advertisedtime.getMinutes();
-        if (minutes < 10)
-            minutes = "0" + minutes;
-        if (hours == -1) {
-            hours = 23;
-        }
-
-
-//        jQuery("#timeTableDeparture tr:last").
-//                after("<tr><td>" + hours + ":" + minutes + "</td><td>" + station +
-//                        "</td><td>" + tagid + "</td>");
-    });
-}
 function Search2() {
     var sign2 = $("#station2").data("sign2");
 
@@ -241,7 +222,7 @@ function Search2() {
             "</AND>" +
             "</FILTER>" +
             // Just include wanted fields to reduce response size.
-            "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
+            //"<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
             "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
             "</QUERY>" +
             "</REQUEST>";
@@ -257,7 +238,6 @@ function Search2() {
                 jQuery("#timeTableDeparture2 tr:last").
                         after("<tr><td colspan='4'>Inga avgångar hittades</td></tr>");
             try {
-                renderTrainAnnouncement2(response.RESPONSE.RESULT[0].TrainAnnouncement);
                 for (var i = 0; i < response.RESPONSE.RESULT[0].TrainAnnouncement.length; i++) {
                     tagid_d.push(response.RESPONSE.RESULT[0].TrainAnnouncement[i].AdvertisedTrainIdent);
                 }
@@ -277,24 +257,6 @@ function Search2() {
         }
 
     })
-}
-
-
-function renderTrainAnnouncement2(announcement) {
-    $(announcement).each(function (iterator, item2) {
-        var advertisedtime2 = new Date(item2.AdvertisedTimeAtLocation);
-        var hours2 = advertisedtime2.getHours() - 1;
-        var minutes2 = advertisedtime2.getMinutes();
-        if (minutes2 < 10)
-            minutes2 = "0" + minutes2;
-        if (hours2 == -1) {
-            hours2 = 23;
-        }
-
-//            jQuery("#timeTableDeparture2 tr:last").
-//                after("<tr><td>" + hours2 + ":" + minutes2 + "</td><td>" + station2 +
-//                    "</td><td>" + tagid2 + "</td>");
-    });
 }
 
 function Search3(i) {
@@ -324,23 +286,26 @@ function Search3(i) {
             "<INCLUDE>AdvertisedTimeAtLocation</INCLUDE>" +
             "<INCLUDE>AdvertisedTrainIdent</INCLUDE>" +
             "</QUERY>" +
-            "</REQUEST>"; 
+            "</REQUEST>";
+
     $.ajax({
         type: "POST",
         contentType: "text/xml",
         dataType: "json",
         data: xmlRequest,
         success: function (response) {
-
             if (response == null)
                 return;
             if (response.RESPONSE.RESULT[0].TrainAnnouncement == null)
-                jQuery("#timeTableDeparture tr:last").
+                jQuery("#tableAvgaende tr:last").
                         after("<tr><td colspan='4'>Inga avgångar hittades 3</td></tr>");
             try {
-                renderTrainAnnouncement3(response.RESPONSE.RESULT[0].TrainAnnouncement);
+                //1
+                utSkrivtTabel(response.RESPONSE.RESULT[0].TrainAnnouncement, station,"tableAnkommande");
                 i++;
-                if(i < tagid_r.length){
+
+                
+                if (tagid_r.length > i) {
                     Search3(i);
                 }
             } catch (ex) {
@@ -351,8 +316,7 @@ function Search3(i) {
     });
 }
 
-
-function renderTrainAnnouncement3(announcement) {
+function utSkrivtTabel(announcement,city,tagg) {
     $(announcement).each(function (iterator, item3) {
         var advertisedtime3 = new Date(item3.AdvertisedTimeAtLocation);
         var hours3 = advertisedtime3.getHours() - 1;
@@ -362,18 +326,21 @@ function renderTrainAnnouncement3(announcement) {
         if (hours3 == -1) {
             hours3 = 23;
         }
-        for (var i = 0; i < tagid_r.length; i++) {
-        jQuery("#timeTableDeparture tr:last").
-                after("<tr><td>" + hours3 + ":" + minutes3 + "</td><td>" + station +
-                        "</td><td>" + tagid_r[i] + "</td>");
-        }
+
+        jQuery("#"+ tagg +" tr:last").
+                after("<tr><td>" + hours3 + ":" + minutes3 + "</td><td>" + city +
+                        "</td>");
+
     });
+    console.log(tagid_r);
 }
+
+
 function Search4(i) {
-    
-   // for (var i = 0; i < tagid_r.length; i++) {
-        var sign2 = $("#station2").data("sign2");
-    
+    var sign2 = $("#station2").data("sign2");
+    console.log("Search4 i:" + i+ " av "+tagid_r.length);
+    console.log("Search4 sign:" + sign2);
+    console.log("Search4 tåg_id:" + tagid_r[i]);
 
     $('#timeTableDeparture2 tr:not(:first)').remove();
     var xmlRequest = "<REQUEST version='1.0'>" +
@@ -410,15 +377,18 @@ function Search4(i) {
             if (response == null)
                 return;
             if (response.RESPONSE.RESULT[0].TrainAnnouncement == null)
-                jQuery("#timeTableDeparture2 tr:last").
+                jQuery("#tableAnkommande tr:last").
                         after("<tr><td colspan='4'>Inga avgångar hittades 4</td></tr>");
             try {
-                renderTrainAnnouncement4(response.RESPONSE.RESULT[0].TrainAnnouncement);
+                console.log(i); //3
+                utSkrivtTabel(response.RESPONSE.RESULT[0].TrainAnnouncement,station2,"tableAnkommande");
+                console.log("##Response##");
+                console.log(response.RESPONSE.RESULT);
                 i++;
-                if(i < tagid_r.length){
+                if (tagid_r.length > i) {
                     Search4(i);
                 }
-              
+
             } catch (ex) {
                 console.log("error: " + ex);
             }
@@ -426,26 +396,7 @@ function Search4(i) {
         }
 
     });
-    
-}
 
-
-function renderTrainAnnouncement4(announcement) {
-    $(announcement).each(function (iterator, item4) {
-        var advertisedtime4 = new Date(item4.AdvertisedTimeAtLocation);
-        var hours4 = advertisedtime4.getHours() - 1;
-        var minutes4 = advertisedtime4.getMinutes();
-        if (minutes4 < 10)
-            minutes4 = "0" + minutes4;
-        if (hours4 == -1) {
-            hours4 = 23;
-        }
-        for (var i = 0; i < tagid_r.length; i++) {
-        jQuery("#timeTableDeparture2 tr:last").
-                after("<tr><td>" + hours4 + ":" + minutes4 + "</td><td>" + station2 +
-                        "</td><td>" + tagid_r[i] + "</td>");
-            }
-    });
 }
 
 function check(nr, tagid_s) {
@@ -469,7 +420,7 @@ function checkTrains() {
     Search3(0);
     Search4(0);
 }
-   
+
 function anrop() {
     station = document.getElementById("station").value;
     station2 = document.getElementById("station2").value;
