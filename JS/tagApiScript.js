@@ -69,6 +69,7 @@ function PreloadTrainStations() {
                 });
                 fillSearchWidget(stationlist);
             } catch (ex) {
+                console.log("Preload error "+ ex);
             }
         }
     });
@@ -189,7 +190,7 @@ function Search() {
                     isdone = true;
                 }
             } catch (ex) {
-                console.log("fångad av en stormvind");
+                console.log("Error Search "+ ex);
             }
 
         }
