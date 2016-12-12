@@ -35,7 +35,7 @@ and open the template in the editor.
                         <ul class="nav navbar-nav">
                             <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-search"></span> The Flow</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
+                            <li><a href="min_sida.php"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
                         </ul>
                         <ul class="nav navbar-nav pull-right">
                             <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
