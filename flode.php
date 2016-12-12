@@ -7,7 +7,7 @@ and open the template in the editor.
 <html ng-app="userApp">
     <head>
         <meta charset="UTF-8">
-        <title>Flöde</title>
+        <title>Bikepool</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="bower_components/bootstrap/less/jumbotron.less" type="text/css">
@@ -16,49 +16,30 @@ and open the template in the editor.
         <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
         <script src="JS/flode.js" type="text/javascript"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <style>
-            #map {
-                height: 100%; 
-                border: solid #BE524F;
-            }
-            html, body{
-                padding-top: 50px;
-                background-color: #f9f7f6;
-                background-repeat: no-repeat;
-                background-size: cover;
-            </style>
+
         </head>
         <body ng-controller="userCtrl">
             <header>
-                <nav class="navbar  navbar-fixed-top" style="background-color: #BE524F;">
+                <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #BE524F;">
                     <div class="container">
-                        <!-- navbar header -->
                         <div class="navbar-header">
+                            <img src="img/rsz_21logo.png" alt="Treby IF" class="navbar-left"/>
                             <button type="button" class="navbar-toggle" style="background: white;"  data-toggle="collapse" data-target="#myNavbar">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>                        
                             </button>
-                            <a class="navbar-brand test" href="#"><img src="img/Logo.png" width="300"/></a>
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <!-- left nav menu -->
-                            <ul class="nav navbar-nav ul-nav">
-                                <li class=""><a href="#" class="text-white-hover"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                                <li><a href="#" class="text-white-hover active"><span class="glyphicon glyphicon-search"></span> The Flow</a></li>
-                                <li><a href="#" class="text-white-hover"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+                            <ul class="nav navbar-nav">
+                                <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-search"></span> The Flow</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
                             </ul>
-                            <!-- right dropdown menu -->
-                            <ul class="nav navbar-nav navbar-right ul-nav">
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle text-white text-white-hover" data-toggle="dropdown" href="#" style="float: right;">My profile <span class="caret"></span></a>
+                            <ul class="nav navbar-nav pull-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
-                                    <ul class="dropdown-menu" style="background: #BE524F;">
-                                        <li><a href="#" class="text-white text-white-hover">Help</a></li>
-                                        <li><a href="#" class="text-white text-white-hover">Options</a></li>
-                                        <li><a href="#" class="text-white text-white-hover">Log out</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -72,16 +53,19 @@ and open the template in the editor.
                             <div class="col-md-6">
                                 <h2>Find your partner</h2>
                             </div>
-                            <div class="col-md-6">
-                                <form class="search">
-                                    <h3><input type="text" name="search" placeholder="Search.."></h3>
-                                </form>
-                            </div>
                             <table class="table table-striped">
-                                <tr ng-repeat="user in users | filter:query | orderBy:sortField:reverse">
+                                <tr>
+                                    <th><a ng-click="sortField = 'Namn'; reverse = !reverse;">Name</a></th>
+                                    <th><a ng-click="sortField = 'Tillganglighet'; reverse = !reverse;">Availability</a></th>
+                                    <th><a ng-click="sortField = 'Tagtid'; reverse = !reverse;">Train time</a></th>
+                                    <th><input class="pull-right" placeholder="Search.." type="text" ng-model="query"/></th>
+                                </tr>
+                                <tr ng-repeat="user in users| filter:query | orderBy:sortField:reverse">
+                                    
                                     <td>{{user.Namn}}</td>
                                     <td>{{user.Tillganglighet}}</td>
                                     <td>{{user.Tagtid}}</td>
+                                    <td><button class="btn btn-primary pull-right" >Profile</button></td>
                                 </tr>
                             </table>
                         </div>
