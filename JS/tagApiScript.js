@@ -302,7 +302,7 @@ function Search3(i) {
                         after("<tr><td colspan='4'>Inga avgångar hittades 3</td></tr>");
             try {
                 //1
-                utSkrivtTabel(response.RESPONSE.RESULT[0].TrainAnnouncement, station,"tableAnkommande");
+                utSkrivtTabel(response.RESPONSE.RESULT[0].TrainAnnouncement, station,"tableAvgaende");
                 i++;
 
                 
@@ -427,4 +427,14 @@ function anrop() {
     station2 = document.getElementById("station2").value;
     Search();
     Search2();
+}
+
+function addTime(){
+    avfard = document.getElementById("avfard").value;
+    ankommande = document.getElementById("ankommande").value;
+    
+    if(avfard === "" || ankommande === ""){
+        document.getElementById("insattningstxt").value = "Enter data before submiting!";
+    }
+    window.open("PHP/insertTime.php?time="+avfard+"-"+ankommande,"_self");
 }

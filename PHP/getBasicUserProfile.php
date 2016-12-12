@@ -15,6 +15,7 @@ $resultSet = $stmt->fetch();
 $name = $resultSet["Namn"];
 $email = $resultSet["Email"];
 $nummer = $resultSet["Nummer"];
+$tagtid = $resultSet["Tagtid"];
 if($resultSet["Tillganglighet"] == 1){
     echo $ready = true;
 } else {
