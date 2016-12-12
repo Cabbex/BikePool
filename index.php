@@ -56,34 +56,29 @@ and open the template in the editor.
     <body>
 
         <div class="start">
-
             <div class="wrap">
-                <a href="index.php"><img src="img/Logo.png" alt="BikePool"/></a><br/>
+                <a href="index.php"><img src="img/Logo.png" class="img-responsive" alt="BikePool"/></a><br/>
                 <div class="type-wrap">
                     <div id="typed-strings">
-                        <span>Would you like to facilitate your life as a <strong>traveler?</strong></span>
+                        <span>Would you like to <strong>facilitate</strong> your life?</span>
                         <p>Do you want to <strong>bike</strong> to school/work?</p>
                         <p><strong>BikePool</strong> wants to help you!</p>
                         <p>Welcome!</p>
                     </div>
                     <span id="typed" style="white-space:pre;"></span>
                 </div>
-            </div>
-
-            <div class="login">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="well">
-                                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-                            </div>
-                        </div>
+                    <div class="col-md-4">
+                        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                     </div>
-                </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-default page-scroll" href="#about">Read more</a>
+                    </div>
+                </div>               
             </div>
         </div>
 
-        <div class="section-about">
+        <div class="section-about" id="about">
             <section class="container">
                 <div class="row section">
 
@@ -136,29 +131,14 @@ and open the template in the editor.
 
         <div class="section-staff" id="staff">
             <div class="row">
-                <h1 class="slideanim">The staff</h1>
                 <div class="col-md-2 col-sm-6 col-md-offset-1">
-                    <div class="staff-body slideanim">
-                        <img class="img-circle" src="img/rsz_user2.png">
-                        <h3 class="name">Casper Björk</h3>
-                        <h4 class="task">Project Leader</h4>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-6 ">
                     <div class="staff-body slideanim">
                         <img class="img-circle" src="img/rsz_user2.png">
                         <h3 class="name">Gustav Andersson</h3>
                         <h4 class="task">Front End</h4>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6">
-                    <div class="staff-body slideanim">
-                        <img class="img-circle" src="img/rsz_user2.png">
-                        <h3 class="name">Manjodh Singh</h3>
-                        <h4 class="task">Back End</h4>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-6">
+                <div class="col-md-2 col-sm-6 ">
                     <div class="staff-body slideanim">
                         <img class="img-circle" src="img/rsz_user2.png">
                         <h3 class="name">Jones Trabelsi</h3>
@@ -168,8 +148,22 @@ and open the template in the editor.
                 <div class="col-md-2 col-sm-6">
                     <div class="staff-body slideanim">
                         <img class="img-circle" src="img/rsz_user2.png">
+                        <h3 class="name">Casper Björk</h3>
+                        <h4 class="task">Project Leader</h4>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="staff-body slideanim">
+                        <img class="img-circle" src="img/rsz_user2.png">
                         <h3 class="name">Albin Arvidsson</h3>
-                        <h4 class="task">Front/Back End</h4>
+                        <h4 class="task">Back End</h4>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-6">
+                    <div class="staff-body slideanim">
+                        <img class="img-circle" src="img/rsz_user2.png">
+                        <h3 class="name">Manjodh Singh</h3>
+                        <h4 class="task">Back End</h4>
                     </div>
                 </div>
             </div>
@@ -179,19 +173,19 @@ and open the template in the editor.
             <footer class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="footer-body slideanim">
+                        <div class="footer-body">
                             <h4 class="footer-header">About Bikepool</h4>
                             <p>Bikepool was born in 2016 as five hungry students put their brains together. The project is a cooperation between the two schools <i>Teknikum</i> and <i>Tumba</i>.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="footer-body slideanim">
+                        <div class="footer-body">
                             <h4 class="footer-header">Our locations</h4>
                             <p>Gamla Norrvägen 6, 352 43 <i>Växjö</i><br/>Utbildningsvägen 2, 147 40 <i>Tumba</i><br/>Sweden</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="footer-body slideanim">
+                        <div class="footer-body">
                             <h4 class="footer-header">Contact us</h4>
                             <p>If you have an opinion of what could be improved at Bikepool, feel free to send an email to the address below<br/>bikepool@gmail.com</p>
                         </div>

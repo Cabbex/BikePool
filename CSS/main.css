@@ -1,4 +1,4 @@
-
+/* CSS for index-file */
 
 *{
     padding:0;
@@ -9,11 +9,6 @@ body{
     font-family: "Open Sans", sans-serif;
     font-size: 15px; 
     overflow-x: hidden;
-    
-}
-
-.login{
-    padding-top: 70px;
 }
 
 .well{

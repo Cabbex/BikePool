@@ -1,3 +1,27 @@
+html, body{
+    padding-top: 35px;
+    background-color: #f9f7f6;
+    font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+.navbar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar a{
+    color: white !important;
+}
+
+.navbar-nav li a:hover, a:active
+{
+    color: #d0d0d0 !important;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
 
 .icon-bar{
     background-color: #BE524F;
@@ -16,9 +40,6 @@
     margin-bottom:  50px;
 }
 
-.ul-nav{
-    margin-top: 50px;
-}
 li{
     display:  block;
 }
@@ -43,4 +64,21 @@ li{
 }
 .icons{
     margin-top: 70px;
+}
+
+.content{
+    border-left: 1px solid #c7c7c7;
+    border-right: 1px solid #c7c7c7;
+    border-bottom:1px solid #c7c7c7;
+    background: white;
+}   
+
+.table a{
+    color:black !important;
+}
+
+@media only screen and (max-width: 736px){
+    .ul-nav{
+        margin-top: 30px;
+    }
 }
