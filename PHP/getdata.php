@@ -1,10 +1,12 @@
 <?php
 
 require './connection.php';
+header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
 try {
     $data;
     $connection = getConnection();
-    $sql = "SELECT Namn, Tillganglighet, Tagtid FROM anvandare";
+    $sql = "SELECT Namn, Tillganglighet, Tagtid, ID FROM anvandare";
     $stmt = $connection->prepare($sql);
     $stmt->execute();
     $resultSet = $stmt->fetchAll();
