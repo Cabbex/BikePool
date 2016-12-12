@@ -33,7 +33,7 @@
                         <ul class="nav navbar-nav">
                             <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-search"></span> The Flow</a></li>
-                            <li><a href="<?php echo "http://localhost/BikePool/min_sida.php?id=". $_SESSION["sub"] ?>"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
+                            <li><a href="<?php echo "http://casper.te4.nu/BikePool/min_sida.php?id=". $_SESSION["sub"] ?>"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
                         </ul>
                         <ul class="nav navbar-nav pull-right">
                             <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
