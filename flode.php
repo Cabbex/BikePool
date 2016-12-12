@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<html ng-app="userApp">
     <head>
         <meta charset="UTF-8">
         <title>Flöde</title>
@@ -27,6 +28,7 @@ and open the template in the editor.
                 background-size: cover;
             </style>
         </head>
+        <body ng-controller="userCtrl">
             <header>
                 <nav class="navbar  navbar-fixed-top" style="background-color: #BE524F;">
                     <div class="container">
@@ -76,6 +78,10 @@ and open the template in the editor.
                                 </form>
                             </div>
                             <table class="table table-striped">
+                                <tr ng-repeat="user in users | filter:query | orderBy:sortField:reverse">
+                                    <td>{{user.Namn}}</td>
+                                    <td>{{user.Tillganglighet}}</td>
+                                    <td>{{user.Tagtid}}</td>
                                 </tr>
                             </table>
                         </div>
