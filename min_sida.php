@@ -10,15 +10,18 @@ if ($_SESSION["loggedIn"] != true) {
         <title>Min sida</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="TestApi/public_html/script.js" type="text/javascript"></script>
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="bower_components/bootstrap/less/jumbotron.less" type="text/css">
         <link href="CSS/design.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script src="JS/tagApiScript.js" type="text/javascript"></script>
         <style>
             #map {
-                height: 50%; 
+                height: 50vh; 
                 border: solid #BE524F;
             }
             html, body{
@@ -34,7 +37,7 @@ if ($_SESSION["loggedIn"] != true) {
             <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #BE524F;">
                 <div class="container">
                     <div class="navbar-header">
-                        <img src="img/rsz_21logo.png" alt="Treby IF" class="navbar-left"/>
+                        <img src="img/rsz_21logo.png" alt="BikePoolLogo" class="navbar-left"/>
                         <button type="button" class="navbar-toggle" style="background: white;"  data-toggle="collapse" data-target="#myNavbar">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -63,7 +66,7 @@ if ($_SESSION["loggedIn"] != true) {
                 <div class="well">
                     <img src="img/ladda ned.png" class="img-responsive center-block" style="background-color: #BE524F; height: 38vh;"/>
                     <br/>
-                    <a href="index.php">Edit Picture</a>
+                    <a href="#">Edit Picture</a>
                     <br/>
                 </div>
             </div>
@@ -83,8 +86,8 @@ if ($_SESSION["loggedIn"] != true) {
                             <td><?php echo $nummer ?></td>
                         </tr>
                         <tr>
-                            <th>Address:</th>
-                            <td>Somewhere in sweden</td>
+                            <th>Current Train time:</th>
+                            <td><?php echo $tagtid ?></td>
                         </tr>
                     </tbody>
                 </table>
@@ -94,31 +97,50 @@ if ($_SESSION["loggedIn"] != true) {
             </div>
         </div>
         <div class="container">
-            <div>
-                <input id="station" type="text" />
-                <input id="station2" type="text" />
-                <input type="button" value="Visa" onclick="anrop();" />
-                <span id="loader" style="margin-left: 10px">Laddar data ...</span>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <p>Insert the city you are going from and towards</p>
+                    <input id="station" type="text" placeholder="Starting station/city" />
+                    <input id="station2" type="text" placeholder="Stop station/city" />
+                    <input type="button" value="Submit" onclick="anrop()" />
+                    <span id="loader" style="margin-left: 10px">Laddar data ...</span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <p id="insattningstxt">Insert time for departure to work and home</p>
+                    <input id="avfard" type="text" placeholder="Time to leave (07:44)" />
+                    <input id="ankommande" type="text" placeholder="Time to go home (15:10)"/>
+                    <input type="button" value="Submit" onclick="addTime()" />
+                </div>
             </div>
             <div id="result">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                        <h4>Leaving train</h3>
+                            <table border="1" id="tableAvgaende" class="table table-striped">
+                                <tr>
+                                    <th scope="col" style="width:40px;">Time</th>
+                                    <th scope="col" style="width:200px;">From</th>
+                                </tr>
 
-                <h3>Avgående tåg</h3>
-                <table border="1" id="tableAvgaende">
-                    <tr>
-                        <th scope="col" style="width:40px;">Tid</th>
-                        <th scope="col" style="width:200px;">Från</th>
-                    </tr>
-                </table>
-                <h4>Ankommande tåg</h4>
-                <table border="1" id="tableAnkommande">
-                    <tr>
-                        <th scope="col" style="width:40px;">Tid</th>
-                        <th scope="col" style="width:200px;">Till</th>
-                    </tr>
-                </table>
+                            </table>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-12">
+                        <h4>Arriving train</h4>
+                        <table border="1" id="tableAnkommande" class="table table-striped">
+                            <tr>
+                                <th scope="col" style="width:40px;">Time</th>
+                                <th scope="col" style="width:200px;">To</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container"><div class="col-sm-offset-3 col-sm-9" id="map"></div></div>
+        <div class="container">
+            <div class="col-sm-9 col-lg-9 col-lg-offset-1" id="map">
+                
+            </div>                
+        </div>
         <!-- Bottom nav -->
         <footer class="footer">
             <div class="container" >

@@ -1,21 +1,19 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html ng-app="userApp">
     <head>
         <meta charset="UTF-8">
-        <title>Bikepool</title>
+        <title>The Flow</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="bower_components/bootstrap/less/jumbotron.less" type="text/css">
         <link href="CSS/design.css" rel="stylesheet" type="text/css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
         <script src="JS/flode.js" type="text/javascript"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     </head>
     <body ng-controller="userCtrl">
@@ -35,7 +33,7 @@ and open the template in the editor.
                         <ul class="nav navbar-nav">
                             <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-search"></span> The Flow</a></li>
-                            <li><a href="min_sida.php"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
+                            <li><a href="<?php echo "http://casper.te4.nu/BikePool/min_sida.php?id=". $_SESSION["sub"] ?>"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
                         </ul>
                         <ul class="nav navbar-nav pull-right">
                             <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
