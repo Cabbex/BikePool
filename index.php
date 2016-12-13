@@ -105,7 +105,7 @@ and open the template in the editor.
                             </div>
                             <div class="media-body slideanim">
                                 <h4 class="media-heading">We are developers</h4>
-                                Our goal was to create something helpful for travelers between citys. Five passionated developers created Bikepool.
+                                Our goal was to create something helpful for travelers between citys. Four passionated developers created Bikepool.
                             </div>
                         </div>
                     </div>
@@ -131,38 +131,31 @@ and open the template in the editor.
 
         <div class="section-staff" id="staff">
             <div class="row">
-                <div class="col-md-2 col-sm-6 col-md-offset-1">
+                <div class="col-md-3 col-sm-6">
                     <div class="staff-body slideanim">
                         <img class="img-circle" src="img/rsz_user2.png">
                         <h3 class="name">Gustav Andersson</h3>
                         <h4 class="task">Front End</h4>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6 ">
+                <div class="col-md-3 col-sm-6 ">
                     <div class="staff-body slideanim">
                         <img class="img-circle" src="img/rsz_user2.png">
                         <h3 class="name">Jones Trabelsi</h3>
                         <h4 class="task">Front End</h4>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="staff-body slideanim">
                         <img class="img-circle" src="img/rsz_user2.png">
                         <h3 class="name">Casper Björk</h3>
                         <h4 class="task">Project Leader</h4>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-6">
+                <div class="col-md-3 col-sm-6">
                     <div class="staff-body slideanim">
                         <img class="img-circle" src="img/rsz_user2.png">
                         <h3 class="name">Albin Arvidsson</h3>
-                        <h4 class="task">Back End</h4>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-6">
-                    <div class="staff-body slideanim">
-                        <img class="img-circle" src="img/rsz_user2.png">
-                        <h3 class="name">Manjodh Singh</h3>
                         <h4 class="task">Back End</h4>
                     </div>
                 </div>
@@ -175,13 +168,13 @@ and open the template in the editor.
                     <div class="col-md-4">
                         <div class="footer-body">
                             <h4 class="footer-header">About Bikepool</h4>
-                            <p>Bikepool was born in 2016 as five hungry students put their brains together. The project is a cooperation between the two schools <i>Teknikum</i> and <i>Tumba</i>.</p>
+                            <p>Bikepool was born in 2016 as four hungry students put their brains together.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="footer-body">
                             <h4 class="footer-header">Our locations</h4>
-                            <p>Gamla Norrvägen 6, 352 43 <i>Växjö</i><br/>Utbildningsvägen 2, 147 40 <i>Tumba</i><br/>Sweden</p>
+                            <p>Gamla Norrvägen 6, 352 43 <i>Växjö</i><br/>Sweden</p>
                         </div>
                     </div>
                     <div class="col-md-4">

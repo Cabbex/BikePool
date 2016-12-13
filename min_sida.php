@@ -71,7 +71,7 @@ if ($_SESSION["loggedIn"] != true) {
                 </div>
             </div>
             <div class="well col-sm-9" style="height: 50vh;">
-                <h2><?php echo $name ?></h2>
+                <h2><?php echo $name?></h2>
                 <br/>
                 <h4>Profile</h4>
                 <table class="table table-striped">
